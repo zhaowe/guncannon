@@ -1,0 +1,20 @@
+'use strict';
+
+// Register `plantDetail` component, along with its associated controller and template
+angular.
+  module('plantDetail').
+  component('plantDetail', {
+    templateUrl: 'plant-detail/plant-detail.template.html',
+    controller: ['$routeParams', 'Plant',
+      function PlantDetailController($routeParams, Plant) {
+        var self = this;
+        self.plant = Plant.get({plantId: $routeParams.plantId}, function(plant) {
+          self.setImage(plant.images[0]);
+        });
+
+        self.setImage = function setImage(imageUrl) {
+          self.mainImageUrl = imageUrl;
+        };
+      }
+    ]
+  });

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="plantcatApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Plant Gallery</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="plant.css" />
+    <link rel="stylesheet" href="plant.animations.css" />
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="plant.module.js"></script>
+    <script src="plant.config.js"></script>
+    <script src="plant.animations.js"></script>
+    <script src="core/plant.module.js"></script>
+    <script src="core/checkmark/checkmark.filter.js"></script>
+    <script src="core/plant/plant.module.js"></script>
+    <script src="core/plant/plant.service.js"></script>
+    <script src="plant-list/plant-list.module.js"></script>
+    <script src="plant-list/plant-list.component.js"></script>
+    <script src="plant-detail/plant-detail.module.js"></script>
+    <script src="plant-detail/plant-detail.component.js"></script>
+  </head>
+  <body>
+
+    <div class="view-container">
+      <div ng-view class="view-frame"></div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<div class="plant-images">
+  <img ng-src="{{img}}" class="plant"
+      ng-class="{selected: img === $ctrl.mainImageUrl}"
+      ng-repeat="img in $ctrl.plant.images" />
+</div>
+
+<h1>{{$ctrl.plant.name}}</h1>
+
+<p>{{$ctrl.plant.description}}</p>
+
+<ul class="plant-thumbs">
+  <li ng-repeat="img in $ctrl.plant.images">
+    <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" />
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in $ctrl.plant.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Battery</span>
+    <dl>
+      <dt>Type</dt>
+      <dd>{{$ctrl.plant.battery.type}}</dd>
+      <dt>Talk Time</dt>
+      <dd>{{$ctrl.plant.battery.talkTime}}</dd>
+      <dt>Standby time (max)</dt>
+      <dd>{{$ctrl.plant.battery.standbyTime}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Storage and Memory</span>
+    <dl>
+      <dt>RAM</dt>
+      <dd>{{$ctrl.plant.storage.ram}}</dd>
+      <dt>Internal Storage</dt>
+      <dd>{{$ctrl.plant.storage.flash}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Connectivity</span>
+    <dl>
+      <dt>Network Support</dt>
+      <dd>{{$ctrl.plant.connectivity.cell}}</dd>
+      <dt>WiFi</dt>
+      <dd>{{$ctrl.plant.connectivity.wifi}}</dd>
+      <dt>Bluetooth</dt>
+      <dd>{{$ctrl.plant.connectivity.bluetooth}}</dd>
+      <dt>Infrared</dt>
+      <dd>{{$ctrl.plant.connectivity.infrared | checkmark}}</dd>
+      <dt>GPS</dt>
+      <dd>{{$ctrl.plant.connectivity.gps | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Android</span>
+    <dl>
+      <dt>OS Version</dt>
+      <dd>{{$ctrl.plant.android.os}}</dd>
+      <dt>UI</dt>
+      <dd>{{$ctrl.plant.android.ui}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Size and Weight</span>
+    <dl>
+      <dt>Dimensions</dt>
+      <dd ng-repeat="dim in $ctrl.plant.sizeAndWeight.dimensions">{{dim}}</dd>
+      <dt>Weight</dt>
+      <dd>{{$ctrl.plant.sizeAndWeight.weight}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Display</span>
+    <dl>
+      <dt>Screen size</dt>
+      <dd>{{$ctrl.plant.display.screenSize}}</dd>
+      <dt>Screen resolution</dt>
+      <dd>{{$ctrl.plant.display.screenResolution}}</dd>
+      <dt>Touch screen</dt>
+      <dd>{{$ctrl.plant.display.touchScreen | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Hardware</span>
+    <dl>
+      <dt>CPU</dt>
+      <dd>{{$ctrl.plant.hardware.cpu}}</dd>
+      <dt>USB</dt>
+      <dd>{{$ctrl.plant.hardware.usb}}</dd>
+      <dt>Audio / headplant jack</dt>
+      <dd>{{$ctrl.plant.hardware.audioJack}}</dd>
+      <dt>FM Radio</dt>
+      <dd>{{$ctrl.plant.hardware.fmRadio | checkmark}}</dd>
+      <dt>Accelerometer</dt>
+      <dd>{{$ctrl.plant.hardware.accelerometer | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Camera</span>
+    <dl>
+      <dt>Primary</dt>
+      <dd>{{$ctrl.plant.camera.primary}}</dd>
+      <dt>Features</dt>
+      <dd>{{$ctrl.plant.camera.features.join(', ')}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Additional Features</span>
+    <dd>{{$ctrl.plant.additionalFeatures}}</dd>
+  </li>
+</ul>

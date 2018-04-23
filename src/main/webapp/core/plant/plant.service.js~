@@ -1,0 +1,15 @@
+'use strict';
+
+angular.
+  module('core.plant').
+  factory('Plant', ['$resource',
+    function($resource) {
+      return $resource('plants/:plantId.json', {}, {
+        query: {
+          method: 'GET',
+          params: {plantId: 'plants'},
+          isArray: true
+        }
+      });
+    }
+  ]);

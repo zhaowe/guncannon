@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" />
+      </p>
+
+      <p>
+        Sort by:
+        <select ng-model="$ctrl.orderProp">
+          <option value="name">名称</option>
+          <option value="purchasingDate">购买时间</option>
+        </select>
+      </p>
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="plants">
+        <li ng-repeat="plant in $ctrl.plants | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+            class="thumbnail plant-list-item">
+          <a href="/guncannon/#!/plant/{{plant.id}}">{{plant.name}}</a>
+	  <ul>
+	    <li>{{plant.category}}</li>
+	    <li>{{plant.specification}}</li>
+	    <li>{{plant.purchaser}}</li>
+	    <li>{{plant.price}}</li>
+	    <li>{{plant.vendor}}</li>
+	    <li>{{plant.purchasingDate}}</li>
+	  </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
